@@ -62,6 +62,15 @@ nav .nav-item {
     text-decoration: none;
     font-weight: bold;
     color: #000000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+nav .nav-item:hover {
+    font-size: 3.5vh;
+    color: #333333;
 }
 
 #marquee {
@@ -158,9 +167,17 @@ nav .nav-item {
     border: none;
 }
 
+#social .social-item:hover > img {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(0%) saturate(23%) hue-rotate(184deg) brightness(102%) contrast(76%);
+}
+
 #social .social-item img {
     height: auto;
     pointer-events: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 #itch {

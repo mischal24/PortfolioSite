@@ -29,7 +29,7 @@ function handle_pages() {
     if (current_page == 1) {
         bg.style.setProperty("transform", "translateX(-60vh)");
         pj.style.setProperty("opacity", "1");
-        pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
+        pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
         pn.style.setProperty("opacity", "1");
         pn.style.setProperty("pointer-events", "all");
         am.style.setProperty("opacity", "0");
