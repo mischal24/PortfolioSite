@@ -1,22 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Mischa Larkins</title>
+        <title>Nesting Creativity - Portfolio 2024</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    
+
     <body>
-        <main id="track">
-            <section id="home">
-                <button></button>
-                <aside>
-                    <div></div>
-                    <button></button>
-                </aside>
-            </section>
-            <section id="gallery">
-            </section>
-        </main>
+        <button id="logo" onclick="location.href='index.html'">
+            <img src="assets/bird.svg" />
+        </button>
+
+        <nav id="main-nav">
+            <a class="nav-item" href="#" onclick="set_page(0)"> Home </a>
+            <a class="nav-item" href="#" onclick="set_page(1)"> Projects </a>
+            <a class="nav-item" href="#" onclick="window.open('assets/resume.pdf');"> Resume </a>
+            <a class="nav-item" href="#" onclick="set_page(2)"> Social </a>
+        </nav>
+
+        <section id="marquee">
+            <div id="track">
+                <div class="content"> &nbsp;
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                    Portfolio 2024
+                </div>
+            </div>
+        </section>
+
+        <img id="background" src="assets/bg.svg" />
+
+        <!-- Projects -->
+
+        <nav id="projects-nav">
+            <a class="nav-item" href="#" onclick="jump_projects(0)"> NWRESD Trail </a>
+            <a class="nav-item" href="#" onclick="jump_projects(49)"> Turnscape </a>
+            <a class="nav-item" href="#" onclick="jump_projects(98)"> Third Thing </a>
+        </nav>
+
+        <section id="projects">
+            <img id="1" src="assets/ph1.png" />
+            <img id="2" src="assets/ph1.png" />
+            <img id="3" src="assets/ph1.png" />
+        </section>
+
+        <!-- Social -->
+
+        <h1 id="about">
+            My name is Mischa Akil Larkins. </br>
+            I’m a game developer and digital artist from the United States. </br>
+
+            </br>
+
+            Number: <i>(971) 225-2300</i> </br>
+            Email: <a href="mailto:mischalarkins06@gmail.com"><i>Mischalarkins06@gmail.com</i></a>
+        </h1>
+
+        <section id="social">
+            <button class="social-item" id="itch" onclick="window.open('https://mischal24.itch.io');">
+                <img src="assets/itch.svg" />
+            </button>
+            <button class="social-item" id="github" onclick="window.open('https://github.com/mischal24')">
+                <img src="assets/github.svg" />
+            </button>
+            <button class="social-item" id="newgrounds" onclick="window.open('https://mischal24.newgrounds.com')">
+                <img src="assets/newgrounds.svg" />
+            </button>
+            <button class="social-item" id="youtube" onclick="window.open('https://www.youtube.com/@Mischal24')">
+                <img src="assets/youtube.svg" />
+            </button>
+        </section>
 
         <script src="script.js"></script>
     </body>

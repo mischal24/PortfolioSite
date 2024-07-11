@@ -1,46 +1,75 @@
-const scroll_speed = 5;
+let current_page = 0;
+let project_scroll = 0;
 let is_interping = true;
-let scroll_percentage = 0;
 
-function scroll_page(event) {
+let bg = document.getElementById("background");
+let pj = document.getElementById("projects");
+let am = document.getElementById("about");
+
+let mn = document.getElementById("main-nav");
+let pn = document.getElementById("projects-nav");
+
+function set_page(x) {
+    current_page = x;
+    handle_pages();
+}
+
+function handle_pages() {
+    if (current_page == 0) {
+        bg.style.setProperty("transform", "translateX(0vh)");
+        pj.style.setProperty("opacity", "0");
+        pj.style.setProperty("transform", "translate(50vw, 30vh)");
+        pn.style.setProperty("opacity", "0");
+        pn.style.setProperty("pointer-events", "none");
+        am.style.setProperty("opacity", "0");
+    }
+
+    if (current_page == 1) {
+        bg.style.setProperty("transform", "translateX(-60vh)");
+        pj.style.setProperty("opacity", "1");
+        pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
+        pn.style.setProperty("opacity", "1");
+        pn.style.setProperty("pointer-events", "all");
+        am.style.setProperty("opacity", "0");
+    }
+    
+    if (current_page == 2) {
+        bg.style.setProperty("transform", "translateX(-150vh)");
+        pj.style.setProperty("opacity", "0");
+        pj.style.setProperty("transform", "translate(50vw, 30vh)");
+        pn.style.setProperty("opacity", "0");
+        pn.style.setProperty("pointer-events", "none");
+        am.style.setProperty("opacity", "1");
+    }
+}
+
+function scroll_projects(event) {
     if (event.deltaY < 0)
     {
-        scroll_percentage += scroll_speed;
+        project_scroll += 5;
     }
     else if (event.deltaY > 0)
     {
-        scroll_percentage -= scroll_speed;
+        project_scroll -= 5;
     }
 
-    document.getElementById('track').style.transform = "translateX(" + scroll_percentage + "vw)";
+    pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
 
-    interpolate_scroll();
-    loop();
-}
-
-function interpolate_scroll() {
-    if (is_interping == true) {
-        document.getElementById('track').style.transition = "all 0.5s ease";
-    } else {
-        document.getElementById('track').style.transition = "none";
+    if (project_scroll < (-60 * pj.childElementCount)) {
+        pj.classList.add("notransition");
+        project_scroll = (60 * pj.childElementCount);
+        setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
-}
-
-const delay = ms => new Promise(res => setTimeout(res, ms));
-
-const loop = async() => {
-    if (scroll_percentage < -200) {
-        is_interping = false;
-        scroll_percentage = 200;
-        await delay(50);
-        is_interping = true;
-    }
-    if (scroll_percentage > 200) {
-        is_interping = false;
-        scroll_percentage = -200;
-        await delay(50);
-        is_interping = true;
+    if (project_scroll > (60 * pj.childElementCount)) {
+        pj.classList.add("notransition");
+        project_scroll = (-60 * pj.childElementCount);
+        setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
 }
 
-document.body.addEventListener("wheel", scroll_page);
+document.body.addEventListener("wheel", scroll_projects);
+
+function jump_projects(x) {
+    project_scroll = -x;
+    pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
+}
