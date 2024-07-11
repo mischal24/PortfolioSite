@@ -5,6 +5,7 @@ let is_interping = true;
 let bg = document.getElementById("background");
 let pj = document.getElementById("projects");
 let am = document.getElementById("about");
+let sc = document.getElementById("social");
 
 let mn = document.getElementById("main-nav");
 let pn = document.getElementById("projects-nav");
@@ -22,6 +23,7 @@ function handle_pages() {
         pn.style.setProperty("opacity", "0");
         pn.style.setProperty("pointer-events", "none");
         am.style.setProperty("opacity", "0");
+        sc.style.setProperty("opacity", "0");
     }
 
     if (current_page == 1) {
@@ -31,6 +33,7 @@ function handle_pages() {
         pn.style.setProperty("opacity", "1");
         pn.style.setProperty("pointer-events", "all");
         am.style.setProperty("opacity", "0");
+        sc.style.setProperty("opacity", "0");
     }
     
     if (current_page == 2) {
@@ -40,6 +43,7 @@ function handle_pages() {
         pn.style.setProperty("opacity", "0");
         pn.style.setProperty("pointer-events", "none");
         am.style.setProperty("opacity", "1");
+        sc.style.setProperty("opacity", "1");
     }
 }
 

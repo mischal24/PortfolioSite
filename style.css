@@ -132,6 +132,10 @@ nav .nav-item {
     position: absolute;
     left: 1vw;
     bottom: 8vh;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     z-index: 0;
 }
 
@@ -182,9 +186,12 @@ nav .nav-item {
 
 #about {
     position: absolute;
-    left: 1.5vw;
+    left: 2vw;
     top: 15vh;
     opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     z-index: 0;
 }
