@@ -18,8 +18,7 @@ html, body {
     height: 100%;
     margin: 0%;
     padding: 0%;
-    --bg-color: #DEDEDE;
-    background: linear-gradient(to right, #000000 0px, var(--bg-color) 0px);
+    background: linear-gradient(to right, #000000 0px, #DEDEDE 0px);
     font-family: outfit, Arial, Helvetica, sans-serif;
     overflow: hidden;
     z-index: 0;
@@ -136,7 +135,7 @@ nav .nav-item:hover {
     position: absolute;
     font-size: 3.7vh;
     font-weight: bolder;
-    color: var(--bg-color);
+    color: #DEDEDE;
     mix-blend-mode: difference;
     white-space: nowrap;
     -webkit-animation: scroll 20s linear infinite;
