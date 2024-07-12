@@ -122,7 +122,7 @@ nav .nav-item {
 
 nav .nav-item:hover {
     transform: translateX(-1vw);
-    color: #3d3d3d;
+    color: #3D3D3D;
 }
 
 #marquee {
@@ -305,6 +305,43 @@ nav .nav-item:hover {
 #about a {
     color: #000000;
     text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#about a.me:hover {
+    color: #3D3D3D;
+}
+
+#about img.me {
+    width: 50vh;
+    height: auto;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+#about a.me:hover ~ img.me {
+    opacity: 0.7;
+}
+
+#me {
+    width: 50vh;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 2;
 }
 
 @media (max-width: 1400px) {

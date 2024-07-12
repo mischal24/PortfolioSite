@@ -86,3 +86,9 @@ function jump_projects(x, link) {
     
     pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
 }
+
+document.body.addEventListener("mousemove", mouse_update);
+    
+function mouse_update(event) {
+  document.getElementById("me").style.setProperty("transform", "translateX(" + event.pageX/50 +"vw)")
+}
