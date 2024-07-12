@@ -48,6 +48,10 @@ function handle_pages() {
 }
 
 function scroll_projects(event) {
+    if (current_page != 1) {
+        return
+    }
+
     if (event.deltaY < 0)
     {
         project_scroll += 5;
@@ -61,10 +65,10 @@ function scroll_projects(event) {
 
     if (project_scroll < (-60 * pj.childElementCount)) {
         pj.classList.add("notransition");
-        project_scroll = (60 * pj.childElementCount);
+        project_scroll = (20 * pj.childElementCount);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
-    if (project_scroll > (60 * pj.childElementCount)) {
+    if (project_scroll > (20 * pj.childElementCount)) {
         pj.classList.add("notransition");
         project_scroll = (-60 * pj.childElementCount);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
