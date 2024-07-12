@@ -78,6 +78,6 @@ function scroll_projects(event) {
 document.body.addEventListener("wheel", scroll_projects);
 
 function jump_projects(x) {
-    project_scroll = -x;
+    project_scroll = -50 * (x-1);
     pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
 }
