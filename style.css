@@ -13,6 +13,11 @@
     background: #CA5587;
 }
 
+/* Change year here */
+#marquee #track .content span::after {
+    content: "2024";
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -143,11 +148,6 @@ nav .nav-item:hover {
     -o-animation: scroll 20s linear infinite;
     animation: scroll 20s linear infinite;
     z-index: 2;
-}
-
-
-#marquee #track .content span::after {
-    content: "2024";
 }
 
 @-webkit-keyframes scroll {
@@ -340,6 +340,7 @@ nav .nav-item:hover {
     display: none;
 }
 
+/* Mobile styling */
 @media (max-width: 1400px) {
     html, body {
         background: #000000;
