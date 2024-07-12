@@ -13,7 +13,7 @@
     background: #CA5587;
 }
 
-html, body {
+html, body, main {
     width: 100%;
     height: 100%;
     margin: 0%;
@@ -342,7 +342,7 @@ nav .nav-item:hover {
 
 /* Mobile styling */
 @media (max-width: 1400px) {
-    html, body {
+    html, body, main {
         background: #000000;
         color: #DEDEDE;
     }
