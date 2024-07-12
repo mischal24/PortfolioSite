@@ -47,76 +47,76 @@ body {
 }
 
 #logo:hover > img {
-    -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-    -moz-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-    -o-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    -webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    -moz-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    -o-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
-@-webkit-keyframes shake-bottom {
+@-webkit-keyframes shake-lr {
     0%,
     100% {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
-      -webkit-transform-origin: 50% 100%;
-              transform-origin: 50% 100%;
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
     }
     10% {
-      -webkit-transform: rotate(2deg);
-              transform: rotate(2deg);
+      -webkit-transform: rotate(8deg);
+              transform: rotate(8deg);
     }
     20%,
     40%,
     60% {
-      -webkit-transform: rotate(-4deg);
-              transform: rotate(-4deg);
+      -webkit-transform: rotate(-10deg);
+              transform: rotate(-10deg);
     }
     30%,
     50%,
     70% {
-      -webkit-transform: rotate(4deg);
-              transform: rotate(4deg);
+      -webkit-transform: rotate(10deg);
+              transform: rotate(10deg);
     }
     80% {
-      -webkit-transform: rotate(-2deg);
-              transform: rotate(-2deg);
+      -webkit-transform: rotate(-8deg);
+              transform: rotate(-8deg);
     }
     90% {
-      -webkit-transform: rotate(2deg);
-              transform: rotate(2deg);
+      -webkit-transform: rotate(8deg);
+              transform: rotate(8deg);
     }
 }
-@keyframes shake-bottom {
+@keyframes shake-lr {
     0%,
     100% {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
-      -webkit-transform-origin: 50% 100%;
-              transform-origin: 50% 100%;
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
     }
     10% {
-      -webkit-transform: rotate(2deg);
-              transform: rotate(2deg);
+      -webkit-transform: rotate(8deg);
+              transform: rotate(8deg);
     }
     20%,
     40%,
     60% {
-      -webkit-transform: rotate(-4deg);
-              transform: rotate(-4deg);
+      -webkit-transform: rotate(-10deg);
+              transform: rotate(-10deg);
     }
     30%,
     50%,
     70% {
-      -webkit-transform: rotate(4deg);
-              transform: rotate(4deg);
+      -webkit-transform: rotate(10deg);
+              transform: rotate(10deg);
     }
     80% {
-      -webkit-transform: rotate(-2deg);
-              transform: rotate(-2deg);
+      -webkit-transform: rotate(-8deg);
+              transform: rotate(-8deg);
     }
     90% {
-      -webkit-transform: rotate(2deg);
-              transform: rotate(2deg);
+      -webkit-transform: rotate(8deg);
+              transform: rotate(8deg);
     }
 }
 
