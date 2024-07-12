@@ -380,7 +380,7 @@ nav .nav-item:hover {
           transform: translate(100vw, 28vh);
         }
         100% {
-          transform: translate(-100%, 28vh);
+          transform: translate(-103%, 28vh);
         }
     }
 
