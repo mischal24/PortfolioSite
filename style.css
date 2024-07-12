@@ -345,8 +345,6 @@ nav .nav-item:hover {
     html, body {
         background: #000000;
         color: #DEDEDE;
-        overflow: hidden;
-        overflow-x: hidden;
     }
 
     #main-nav, #projects-nav, #marquee, #background, #about {
