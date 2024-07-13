@@ -61,16 +61,16 @@ function scroll_projects(event) {
         project_scroll -= 5;
     }
 
-    pj.style.setProperty("transform", "translate(" + project_scroll * 10 + "px, 30vh)");
+    pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
 
-    if (project_scroll < (-98 * pj.childElementCount)) {
+    if (project_scroll < (-60 * pj.childElementCount)) {
         pj.classList.add("notransition");
-        project_scroll = (30 * pj.childElementCount);
+        project_scroll = (20 * pj.childElementCount);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
-    if (project_scroll > (30 * pj.childElementCount)) {
+    if (project_scroll > (20 * pj.childElementCount)) {
         pj.classList.add("notransition");
-        project_scroll = (-98 * pj.childElementCount);
+        project_scroll = (-60 * pj.childElementCount);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
 }
@@ -78,13 +78,13 @@ function scroll_projects(event) {
 document.body.addEventListener("wheel", scroll_projects);
 
 function jump_projects(x, link) {
-    if (project_scroll != -91 * (x-1)) {
-        project_scroll = -91 * (x-1);
+    if (project_scroll != -50 * (x-1)) {
+        project_scroll = -50 * (x-1);
     } else {
         window.open(link);
     }
     
-    pj.style.setProperty("transform", "translate(" + project_scroll * 10 + "px, 30vh)");
+    pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
 }
 
 document.body.addEventListener("mousemove", mouse_update);
