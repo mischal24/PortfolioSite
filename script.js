@@ -78,8 +78,8 @@ function scroll_projects(event) {
 document.body.addEventListener("wheel", scroll_projects);
 
 function jump_projects(x, link) {
-    if (project_scroll != -50 * (x-1)) {
-        project_scroll = -50 * (x-1);
+    if (project_scroll != -49.3 * (x-1)) {
+        project_scroll = -49.3 * (x-1);
     } else {
         window.open(link);
     }
