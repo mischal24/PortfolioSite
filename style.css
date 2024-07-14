@@ -185,18 +185,10 @@ nav .nav-item:hover {
     transition: all 0.5s ease;
 }
 
-#projects-nav a::after {
-    content: "↓";
-}
-
-#projects-nav a:hover::after {
-    content: "↗";
-}
-
 #projects-nav p {
     font-size: 2vh;
     text-align: right;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 #projects {
