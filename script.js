@@ -61,7 +61,7 @@ function scroll_projects(event) {
         project_scroll -= 5;
     }
 
-    pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
+    pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
 
     if (project_scroll < (-60 * pj.childElementCount)) {
         pj.classList.add("notransition");
@@ -78,13 +78,13 @@ function scroll_projects(event) {
 document.body.addEventListener("wheel", scroll_projects);
 
 function jump_projects(x, link) {
-    if (project_scroll != -49.3 * (x-1)) {
-        project_scroll = -49.3 * (x-1);
+    if (project_scroll != -100 * (x-1)) {
+        project_scroll = -100 * (x-1);
     } else {
         window.open(link);
     }
     
-    pj.style.setProperty("transform", "translate(" + project_scroll + "vw, 30vh)");
+    pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
 }
 
 document.body.addEventListener("mousemove", mouse_update);
