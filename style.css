@@ -209,6 +209,7 @@ nav .nav-item:hover {
     width: 100vh;
     height: 50vh;
     object-fit: cover;
+    box-shadow: 0px 11px 14.2px #00000025;
 }
 
 .notransition {
