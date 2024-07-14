@@ -63,14 +63,14 @@ function scroll_projects(event) {
 
     pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
 
-    if (project_scroll < (-60 * pj.childElementCount)) {
+    if (project_scroll < (-105 * pj.childElementCount)) {
         pj.classList.add("notransition");
-        project_scroll = (20 * pj.childElementCount);
+        project_scroll = (22 * pj.childElementCount);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
-    if (project_scroll > (20 * pj.childElementCount)) {
+    if (project_scroll > (22 * pj.childElementCount)) {
         pj.classList.add("notransition");
-        project_scroll = (-60 * pj.childElementCount);
+        project_scroll = (-105 * pj.childElementCount);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
 }
