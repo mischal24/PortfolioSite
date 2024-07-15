@@ -391,7 +391,7 @@ nav .nav-item:hover {
     #logo {
         width: 15vw;
         height: 15vw;
-        right: 0;
+        transform: translateX(68vw);
         margin: 5vh;
     }
 
