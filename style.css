@@ -453,4 +453,8 @@ nav .nav-item:hover {
         width: 90%;
         transform: translateX(0.15vw);
     }
+
+    .project {
+        margin-left: 0vw;
+    }
 }
