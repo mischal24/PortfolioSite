@@ -108,3 +108,19 @@ function mouse_on_div() {
 function mouse_off_div() {
     document.getElementById("cursor").style.setProperty("scale", "100%");
 }
+
+function mouse_on_abd() {
+    if (current_page != 2) {
+        return
+    }
+
+    document.getElementById("cursor").style.setProperty("scale", "200%");
+}
+
+function mouse_off_abd() {
+    if (current_page != 2) {
+        return
+    }
+
+    document.getElementById("cursor").style.setProperty("scale", "100%");
+}
