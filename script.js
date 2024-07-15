@@ -63,14 +63,14 @@ function scroll_projects(event) {
 
     pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
 
-    if (project_scroll < (-105 * pj.querySelectorAll("img").length)) {
+    if (project_scroll < (-115 * pj.querySelectorAll("img").length)) {
         pj.classList.add("notransition");
-        project_scroll = (22 * pj.querySelectorAll("img").length);
+        project_scroll = (26 * pj.querySelectorAll("img").length);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
-    if (project_scroll > (22 * pj.querySelectorAll("img").length)) {
+    if (project_scroll > (26 * pj.querySelectorAll("img").length)) {
         pj.classList.add("notransition");
-        project_scroll = (-105 * pj.querySelectorAll("img").length);
+        project_scroll = (-115 * pj.querySelectorAll("img").length);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
 }
