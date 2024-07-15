@@ -78,8 +78,8 @@ function scroll_projects(event) {
 document.body.addEventListener("wheel", scroll_projects);
 
 function jump_projects(x) {
-    if (project_scroll != -101 * (x-1)) {
-        project_scroll = -101 * (x-1);
+    if (project_scroll != -101.25 * (x-1)) {
+        project_scroll = -101.25 * (x-1);
     }
     
     pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
