@@ -19,7 +19,7 @@ function handle_pages() {
     if (current_page == 0) {
         bg.style.setProperty("transform", "translateX(0vh)");
         pj.style.setProperty("opacity", "0");
-        pj.style.setProperty("transform", "translate(50vw, 30vh)");
+        pj.style.setProperty("transform", "translate(100vw, 30vh)");
         pn.style.setProperty("opacity", "0");
         pn.style.setProperty("pointer-events", "none");
         am.style.setProperty("opacity", "0");
@@ -39,7 +39,7 @@ function handle_pages() {
     if (current_page == 2) {
         bg.style.setProperty("transform", "translateX(-150vh)");
         pj.style.setProperty("opacity", "0");
-        pj.style.setProperty("transform", "translate(50vw, 30vh)");
+        pj.style.setProperty("transform", "translate(100vw, 30vh)");
         pn.style.setProperty("opacity", "0");
         pn.style.setProperty("pointer-events", "none");
         am.style.setProperty("opacity", "1");
@@ -54,34 +54,32 @@ function scroll_projects(event) {
 
     if (event.deltaY < 0)
     {
-        project_scroll += 5;
+        project_scroll += 10;
     }
     else if (event.deltaY > 0)
     {
-        project_scroll -= 5;
+        project_scroll -= 10;
     }
 
     pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
 
-    if (project_scroll < (-105 * pj.childElementCount)) {
+    if (project_scroll < (-105 * pj.querySelectorAll("img").length)) {
         pj.classList.add("notransition");
-        project_scroll = (22 * pj.childElementCount);
+        project_scroll = (22 * pj.querySelectorAll("img").length);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
-    if (project_scroll > (22 * pj.childElementCount)) {
+    if (project_scroll > (22 * pj.querySelectorAll("img").length)) {
         pj.classList.add("notransition");
-        project_scroll = (-105 * pj.childElementCount);
+        project_scroll = (-105 * pj.querySelectorAll("img").length);
         setTimeout(() => {pj.classList.remove("notransition");}, 500)
     }
 }
 
 document.body.addEventListener("wheel", scroll_projects);
 
-function jump_projects(x, link) {
-    if (project_scroll != -100 * (x-1)) {
-        project_scroll = -100 * (x-1);
-    } else {
-        window.open(link);
+function jump_projects(x) {
+    if (project_scroll != -102 * (x-1)) {
+        project_scroll = -102 * (x-1);
     }
     
     pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
@@ -90,5 +88,23 @@ function jump_projects(x, link) {
 document.body.addEventListener("mousemove", mouse_update);
     
 function mouse_update(event) {
-  document.getElementById("me").style.setProperty("transform", "translateX(" + event.pageX/50 +"vw)")
+    document.getElementById("me").style.setProperty("transform", "translateX(" + event.pageX/50 +"vw)")
+}
+
+document.body.onpointermove = event => {
+    const { clientX, clientY } = event;
+
+    document.getElementById("cursor").animate({
+        left: `${clientX-25}px`,
+        top: `${clientY-25}px`
+    
+    }, {duration: 1000, fill: "forwards"})
+}
+
+function mouse_on_div() {
+    document.getElementById("cursor").style.setProperty("scale", "200%");
+}
+
+function mouse_off_div() {
+    document.getElementById("cursor").style.setProperty("scale", "100%");
 }

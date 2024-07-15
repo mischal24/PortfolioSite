@@ -9,15 +9,17 @@
 
     <body>
         <main>
-            <button id="logo" onclick="location.href=''">
+            <div id="cursor"></div>
+
+            <button id="logo" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="location.href=''">
                 <img src="assets/icons/bird.svg" />
             </button>
 
             <nav id="main-nav">
-                <a class="nav-item" href="#" onclick="set_page(0)"> Home </a>
-                <a class="nav-item" href="#" onclick="set_page(1)"> Projects </a>
-                <a class="nav-item" href="#" onclick="window.open('assets/resume.pdf');"> Resume </a>
-                <a class="nav-item" href="#" onclick="set_page(2)"> Social </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="set_page(0)"> Home </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="set_page(1)"> Projects </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('assets/resume.pdf');"> Resume </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="set_page(2)"> Social </a>
             </nav>
 
             <section id="marquee">
@@ -52,49 +54,56 @@
             <!-- Projects -->
 
             <nav id="projects-nav">
-                <p> Click project twice to visit. </p>
-                <a class="nav-item" href="#" onclick="jump_projects(1, 'https://mischal24.itch.io/bombat')"> Bombat: That’s Gotta Hurt! </a>
-                <a class="nav-item" href="#" onclick="jump_projects(5, 'https://www.nwresd.org')"> NWRESD Trail Template </a>
-                <a class="nav-item" href="#" onclick="jump_projects(8, 'https://mischal24.itch.io/orchard')"> Orchard Project Tracker </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="jump_projects(1)"> Bombat: That’s Gotta Hurt! </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="jump_projects(5)"> NWRESD Trail Template </a>
+                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="jump_projects(8)"> Orchard Project Tracker </a>
             </nav>
 
             <section id="projects">
-                <img src="assets/projects/bombat.png" />
-                <img src="assets/ph1.png" />
-                <img src="assets/ph1.png" />
-                <img src="assets/ph1.png" />
-                <img src="assets/projects/nwresdtrail.png" />
-                <img src="assets/projects/nwresdtrailpcmock.png" />
-                <img src="assets/projects/nwresdtrailmobilemock.png" />
-                <img src="assets/projects/orchard.png" />
-                <img src="assets/ph1.png" />
-                <img src="assets/ph1.png" />
+                <span class="project" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://mischal24.itch.io/bombat');">
+                    <img src="assets/projects/bombat.png" />
+                    <img src="assets/ph1.png" />
+                    <img src="assets/ph1.png" />
+                    <img src="assets/ph1.png" />
+                </span>
+
+                <span class="project" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://www.nwresd.org');">
+                    <img src="assets/projects/nwresdtrail.png" />
+                    <img src="assets/projects/nwresdtrailpcmock.png" />
+                    <img src="assets/projects/nwresdtrailmobilemock.png" />
+                </span>
+
+                <span class="project" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://mischal24.itch.io/orchard');">
+                    <img src="assets/projects/orchard.png" />
+                    <img src="assets/ph1.png" />
+                    <img src="assets/ph1.png" />
+                </span>
             </section>
 
             <!-- Social -->
 
             <h1 id="about">
-                My name is <a class="me" href="#">Mischa Akil Larkins</a>. </br>
+                My name is <a class="me" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()">Mischa Akil Larkins</a>. </br>
                 <img id="me" class="me" src="assets/me.jpg" />
                 I’m a game developer and technical artist from the United States. </br>
     
                 </br>
     
                 Number: <i>(971) 225-2300</i> </br>
-                Email: <a href="mailto:mischalarkins06@gmail.com"><i>Mischalarkins06@gmail.com</i></a>
+                Email: <a href="mailto:mischalarkins06@gmail.com" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()"><i>Mischalarkins06@gmail.com</i></a>
             </h1>
 
             <section id="social">
-                <button class="social-item" id="itch" onclick="window.open('https://mischal24.itch.io');">
+                <button class="social-item" id="itch" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://mischal24.itch.io');">
                     <img src="assets/icons/itch.svg" />
                 </button>
-                <button class="social-item" id="github" onclick="window.open('https://github.com/mischal24')">
+                <button class="social-item" id="github" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://github.com/mischal24')">
                     <img src="assets/icons/github.svg" />
                 </button>
-                <button class="social-item" id="newgrounds" onclick="window.open('https://mischal24.newgrounds.com')">
+                <button class="social-item" id="newgrounds" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://mischal24.newgrounds.com')">
                     <img src="assets/icons/newgrounds.svg" />
                 </button>
-                <button class="social-item" id="youtube" onclick="window.open('https://www.youtube.com/@Mischal24')">
+                <button class="social-item" id="youtube" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://www.youtube.com/@Mischal24')">
                     <img src="assets/icons/youtube.svg" />
                 </button>
             </section>
