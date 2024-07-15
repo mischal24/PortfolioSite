@@ -46,6 +46,7 @@ body {
 #logo {
     width: 4.2vw;
     height: 4.2vw;
+    left: 0.7vh;
     position: absolute;
     margin: 1.5vw;
     background: none;
@@ -241,7 +242,7 @@ nav .nav-item:hover {
 
 #social {
     position: absolute;
-    left: 1vw;
+    left: 1.3vw;
     bottom: 8vh;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -251,7 +252,7 @@ nav .nav-item:hover {
 }
 
 #social .social-item {
-    height: 4vw;
+    height: 5vw;
     background: none;
     border: none;
     -webkit-transition: all 0.5s ease;
@@ -275,7 +276,7 @@ nav .nav-item:hover {
 }
 
 #itch {
-    width: 4vw;
+    width: 4.5vw;
 }
 
 #itch img {
@@ -283,7 +284,7 @@ nav .nav-item:hover {
 }
 
 #github {
-    width: 3.05vw;
+    width: 3.4vw;
 }
 
 #github img {
@@ -292,7 +293,7 @@ nav .nav-item:hover {
 }
 
 #newgrounds {
-    width: 4vw;
+    width: 4.5vw;
 }
 
 #newgrounds img {
@@ -301,7 +302,7 @@ nav .nav-item:hover {
 }
 
 #youtube {
-    width: 4vw;
+    width: 4.5vw;
 }
 
 #youtube img {
