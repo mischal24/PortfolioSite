@@ -222,7 +222,7 @@ nav .nav-item:hover {
 .project {
     display: flex;
     flex-direction: row;
-    margin-left: 2vw;
+    margin-right: 2vw;
     cursor: pointer;
 }
 
@@ -455,6 +455,6 @@ nav .nav-item:hover {
     }
 
     .project {
-        margin-left: 0vw;
+        margin-right: 0vw;
     }
 }
