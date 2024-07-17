@@ -1,31 +1,199 @@
 @font-face {
     font-family: outfit;
-    src: url(assets/outfit.ttf);
-}
-
-::-moz-selection {
-    color: #000000;
-    background: #CA5587;
-}
-  
-::selection {
-    color: #000000;
-    background: #CA5587;
+    src: url(assets/fonts/Outfit-VariableFont_wght.ttf);
 }
 
 html, body, main {
+    position: relative;
     width: 100%;
     height: 100%;
-    margin: 0%;
-    padding: 0%;
-    background: linear-gradient(to right, #000000 0px, #DEDEDE 0px);
-    font-family: outfit, Arial, Helvetica, sans-serif;
+    margin: 0;
     overflow: hidden;
     z-index: 0;
 }
 
 body {
-    display: block;
+    font-family: outfit;
+}
+
+main {
+    background-color: #DEDEDE;
+    background-image: url(assets/images/pattern.png);
+    animation: background-scroll 2s linear infinite;
+}
+
+@keyframes background-scroll {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -125px 125px;
+    }
+}
+
+#background {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    pointer-events: none;
+    transform: translateX(-60%);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+#logo {
+    position: absolute;
+    mix-blend-mode: difference;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+#logo img {
+    width: 8vh;
+    height: 8vh;
+    margin: 4vh;
+    pointer-events: none;
+}
+
+#logo:hover {
+    animation: logo-jingle 1s both;
+}
+
+@keyframes logo-jingle {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    10%, 20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%, 50%, 70%, 90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%, 60%, 80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 4vh;
+    bottom: 0vh;
+    mix-blend-mode: difference;
+    z-index: 2;
+}
+
+nav a {
+    font-size: 5vh;
+    font-weight: bold;
+    text-decoration: none;
+    color: #DEDEDE;
+    transition: all 0.5s ease;
+}
+
+nav a:hover {
+    transform: translateX(5vh);
+}
+
+#projects {
+    position: absolute;
+    left: 65vh;
+    top: 23vh;
+    z-index: 3;
+}
+
+.game-transition {
+    transition: all 0.5s ease 0.2s;
+}
+
+#about {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+#about h1, h2 {
+    position: absolute;
+    left: 65vh;
+    z-index: 1;
+}
+
+#about h1 {
+    top: 24vh;
+    font-size: 9vh;
+}
+
+#about h2 {
+    top: 35vh;
+    font-size: 5.5vh;
+}
+
+#tokens {
+    position: absolute;
+    left: 90vh;
+    top: 50vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    z-index: 1;
+}
+
+.token {
+    width: 15vh;
+    height: 3vh;
+    background-color: #000;
+    color: #DEDEDE;
+    padding: 1vh;
+    margin: 1vh;
+    margin-right: 5vh;
+    font-size: 2vh;
+    border-radius: 50px;
+    text-align: center;
+    transition: all 0.5s ease;
+    font-weight: bold;
+}
+
+.token:hover {
+    transform: scale(120%) rotate(2deg);
+}
+
+#about p {
+    position: absolute;
+    width: 75vh;
+    left: 65vh;
+    top: 70vh;
+    font-size: 3vh;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+#links {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 2vh;
+    z-index: 1;
+}
+
+#links a > img {
+    width: 9vh;
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+#links a:hover > img {
+    transform: scale(120%) rotate(-2deg);
+}
+
+#links a:nth-child(2) {
+    margin-right: 0.7vh;
+}
+
+#links a:nth-child(3) {
+    margin-right: 1.2vh;
 }
 
 #cursor {
@@ -41,420 +209,4 @@ body {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     z-index: 4;
-}
-
-#logo {
-    width: 4.2vw;
-    height: 4.2vw;
-    left: 0.7vh;
-    position: absolute;
-    margin: 1.5vw;
-    background: none;
-    border: none;
-    mix-blend-mode: difference;
-    z-index: 2;
-}
-
-#logo img {
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-}
-
-#logo:hover > img {
-    -webkit-animation: tada 1s both;
-    -moz-animation: tada 1s both;
-    -o-animation: tada 1s both;
-	animation: tada 1s both;
-}
-
-@-webkit-keyframes tada {
-    0% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-    10%, 20% {
-        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    }
-    30%, 50%, 70%, 90% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    }
-    40%, 60%, 80% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    }
-    100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-}
-@keyframes tada {
-    0% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-    10%, 20% {
-        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    }
-    30%, 50%, 70%, 90% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    }
-    40%, 60%, 80% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    }
-    100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-} 
-
-nav {
-    width: fit-content;
-    top: 1%;
-    right: 1%;
-    position: absolute;
-    font-size: 3.4vh;
-    z-index: 1;
-}
-
-nav .nav-item {
-    width:100%;
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    font-weight: bold;
-    color: #000000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-nav .nav-item:hover {
-    transform: translateX(-1vw);
-}
-
-#marquee {
-    width: 100vw;
-    height: 5vh;
-    bottom: 1%;
-    position: absolute;
-    cursor: default;
-}
-
-#marquee #track {
-    position: absolute;
-    font-size: 3.7vh;
-    font-weight: bolder;
-    color: #DEDEDE;
-    mix-blend-mode: difference;
-    white-space: nowrap;
-    -webkit-animation: scroll 20s linear infinite;
-    -moz-animation: scroll 20s linear infinite;
-    -o-animation: scroll 20s linear infinite;
-    animation: scroll 20s linear infinite;
-    z-index: 2;
-}
-
-/* Change year here */
-#marquee #track .content span::after {
-    content: "2024";
-}
-
-@-webkit-keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-#background {
-    height: 100%;
-    top: 0%;
-    position: absolute;
-    pointer-events: none;
-    transform: translateX(0vh);
-    overflow-x: hidden;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    z-index: 1;
-}
-
-#projects-nav {
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-30vh, 0.5vh);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#projects-nav p {
-    font-size: 2vh;
-    text-align: right;
-    opacity: 0.3;
-}
-
-#projects {
-    opacity: 0;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    transform: translate(100vw, 30vh);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    z-index: 3;
-}
-
-.project {
-    display: flex;
-    flex-direction: row;
-    margin-right: 2vw;
-    cursor: pointer;
-}
-
-.project img {
-    width: 100vh;
-    height: 50vh;
-    object-fit: cover;
-    pointer-events: none;
-}
-
-.notransition {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
-}
-
-#social {
-    position: absolute;
-    left: 1.3vw;
-    bottom: 8vh;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    z-index: 0;
-}
-
-#social .social-item {
-    height: 5vw;
-    background: none;
-    border: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#social .social-item:hover {
-    scale: 110%;
-    transform: rotate(2deg);
-}
-
-#social .social-item img {
-    height: auto;
-    pointer-events: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#itch {
-    width: 4.5vw;
-}
-
-#itch img {
-    width: 78%;
-}
-
-#github {
-    width: 3.4vw;
-}
-
-#github img {
-    width: 100%;
-    transform: translateX(-0.3vw);
-}
-
-#newgrounds {
-    width: 4.5vw;
-}
-
-#newgrounds img {
-    width: 100%;
-    transform: translateY(-0.1vw);
-}
-
-#youtube {
-    width: 4.5vw;
-}
-
-#youtube img {
-    width: 90%;
-    transform: translateX(0.15vw);
-}
-
-#about {
-    position: absolute;
-    left: 2vw;
-    top: 15vh;
-    opacity: 0;
-    font-size: 3.4vh;
-    font-weight: 480;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    z-index: 0;
-}
-
-#about a {
-    color: #000000;
-    text-decoration: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#about a.me, h1 {
-    cursor: default;
-}
-
-.about-header {
-    font-weight: bold;
-}
-
-#about img.me {
-    width: 50vh;
-    height: 50vh;
-    object-fit: cover;
-    position: absolute;
-    pointer-events: none;
-    opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    z-index: 2;
-}
-
-#about a.me:hover ~ img.me {
-    opacity: 0.8;
-}
-
-#mobile {
-    display: none;
-}
-
-/* Mobile styling */
-@media (max-width: 1400px) {
-    html, body, main {
-        background: #000000;
-        color: #DEDEDE;
-    }
-
-    #main-nav, #projects-nav, #marquee, #background, #about, #cursor {
-        display: none;
-    }
-
-    #mobile {
-        position: relative;
-        display: block;
-        font-size: 8vh;
-        transform: translateY(10vh);
-        width: 90vw;
-        margin: 2vh;
-        color: #DEDEDE;
-        mix-blend-mode: difference;
-        z-index: 2;
-    }
-
-    #logo {
-        width: 15vw;
-        height: 15vw;
-        transform: translateX(68vw);
-        margin: 5vh;
-    }
-
-    #projects {
-        opacity: 1;
-        animation: mobile-marquee 40s linear infinite;
-        z-index: 1;
-    }
-
-    @keyframes mobile-marquee {
-        0% {
-          transform: translate(100vw, 28vh);
-        }
-        100% {
-          transform: translate(-103%, 28vh);
-        }
-    }
-
-    #social {
-        filter: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(504%) hue-rotate(241deg) brightness(114%) contrast(74%);
-        transform: translateY(5vh);
-    }
-
-    #social .social-item {
-        height: 17vw;
-    }
-
-    #itch {
-        width: 16vw;
-    }
-    
-    #itch img {
-        width: 78%;
-    }
-    
-    #github {
-        width: 11.7vw;
-    }
-    
-    #github img {
-        width: 100%;
-        transform: translateX(-0.3vw);
-    }
-    
-    #newgrounds {
-        width: 16vw;
-    }
-    
-    #newgrounds img {
-        width: 100%;
-        transform: translateY(-0.1vw);
-    }
-    
-    #youtube {
-        width: 16vw;
-    }
-    
-    #youtube img {
-        width: 90%;
-        transform: translateX(0.15vw);
-    }
-
-    .project {
-        margin-right: 0vw;
-    }
 }

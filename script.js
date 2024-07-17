@@ -1,94 +1,65 @@
-let current_page = 0;
-let project_scroll = 0;
-let is_interping = true;
+const pages = {
+    HOME: 0,
+    PROJECTS: 1,
+    ABOUT: 2
+};
 
-let bg = document.getElementById("background");
-let pj = document.getElementById("projects");
-let am = document.getElementById("about");
-let sc = document.getElementById("social");
+let current_page = pages.HOME;
+let background = document.getElementById("background");
+let logo = document.getElementById("logo");
+let projects = document.getElementById("projects");
+let about = document.getElementById("about");
+let about_text = document.getElementById("about-text");
+let cursor = document.getElementById("cursor");
 
-let mn = document.getElementById("main-nav");
-let pn = document.getElementById("projects-nav");
+function page_loaded() {
+    handle_page_change();
+}
 
-function set_page(x) {
+document.onload = page_loaded();
+
+function select_page(x) {
     current_page = x;
-    handle_pages();
+    handle_page_change();
 }
 
-function handle_pages() {
-    if (current_page == 0) {
-        bg.style.setProperty("transform", "translateX(0vh)");
-        pj.style.setProperty("opacity", "0");
-        pj.style.setProperty("transform", "translate(100vw, 30vh)");
-        pn.style.setProperty("opacity", "0");
-        pn.style.setProperty("pointer-events", "none");
-        am.style.setProperty("opacity", "0");
-        sc.style.setProperty("opacity", "0");
+function handle_page_change() {
+    if (current_page == pages.HOME) {
+        background.style.setProperty("transform", "translateX(-60%)");
+        logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
+        logo.style.setProperty("pointer-events", "all");
+        projects.classList.remove("game-transition");
+        projects.style.setProperty("opacity", "0");
+        projects.style.setProperty("pointer-events", "none");
+        about.style.setProperty("opacity", "0");
+        about.style.setProperty("pointer-events", "none");
     }
 
-    if (current_page == 1) {
-        bg.style.setProperty("transform", "translateX(-60vh)");
-        pj.style.setProperty("opacity", "1");
-        pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
-        pn.style.setProperty("opacity", "1");
-        pn.style.setProperty("pointer-events", "all");
-        am.style.setProperty("opacity", "0");
-        sc.style.setProperty("opacity", "0");
-    }
-    
-    if (current_page == 2) {
-        bg.style.setProperty("transform", "translateX(-150vh)");
-        pj.style.setProperty("opacity", "0");
-        pj.style.setProperty("transform", "translate(100vw, 30vh)");
-        pn.style.setProperty("opacity", "0");
-        pn.style.setProperty("pointer-events", "none");
-        am.style.setProperty("opacity", "1");
-        sc.style.setProperty("opacity", "1");
-    }
-}
-
-function scroll_projects(event) {
-    if (current_page != 1) {
-        return
+    if (current_page == pages.PROJECTS) {
+        background.style.setProperty("transform", "translateX(0%)");
+        logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
+        logo.style.setProperty("pointer-events", "all");
+        projects.classList.add("game-transition");
+        projects.style.setProperty("opacity", "1");
+        projects.style.setProperty("pointer-events", "all");
+        about.style.setProperty("opacity", "0");
+        about.style.setProperty("pointer-events", "none");
     }
 
-    if (event.deltaY < 0)
-    {
-        project_scroll += 10;
-    }
-    else if (event.deltaY > 0)
-    {
-        project_scroll -= 10;
-    }
-
-    pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
-
-    if (project_scroll < (-115 * pj.querySelectorAll("img").length)) {
-        pj.classList.add("notransition");
-        project_scroll = (26 * pj.querySelectorAll("img").length);
-        setTimeout(() => {pj.classList.remove("notransition");}, 500)
-    }
-    if (project_scroll > (26 * pj.querySelectorAll("img").length)) {
-        pj.classList.add("notransition");
-        project_scroll = (-115 * pj.querySelectorAll("img").length);
-        setTimeout(() => {pj.classList.remove("notransition");}, 500)
+    if (current_page == pages.ABOUT) {
+        background.style.setProperty("transform", "translateX(-100%)");
+        logo.style.setProperty("transform", "scale(500%) translate(11.4vh, 7vh)");
+        logo.style.setProperty("pointer-events", "none");
+        projects.classList.remove("game-transition");
+        projects.style.setProperty("opacity", "0");
+        projects.style.setProperty("pointer-events", "none");
+        about.style.setProperty("opacity", "1");
+        about.style.setProperty("pointer-events", "all");
     }
 }
 
-document.body.addEventListener("wheel", scroll_projects);
-
-function jump_projects(x) {
-    if (project_scroll != -101.25 * (x-1)) {
-        project_scroll = -101.25 * (x-1);
-    }
-    
-    pj.style.setProperty("transform", "translate(" + project_scroll + "vh, 30vh)");
-}
-
-document.body.addEventListener("mousemove", mouse_update);
-    
-function mouse_update(event) {
-    document.getElementById("me").style.setProperty("transform", "translateX(" + event.pageX/50 +"vw)")
+function set_about_text(new_text) {
+    about_text.innerHTML = new_text;
 }
 
 document.body.onpointermove = event => {
@@ -101,26 +72,18 @@ document.body.onpointermove = event => {
     }, {duration: 1000, fill: "forwards"})
 }
 
-function mouse_on_div() {
-    document.getElementById("cursor").style.setProperty("scale", "200%");
-}
-
-function mouse_off_div() {
-    document.getElementById("cursor").style.setProperty("scale", "100%");
-}
-
-function mouse_on_abd() {
-    if (current_page != 2) {
-        return
+function mouse_on_div(x) {
+    if (x != null && current_page != x) {
+        return;
     }
 
-    document.getElementById("cursor").style.setProperty("scale", "200%");
+    cursor.style.setProperty("scale", "200%");
 }
 
-function mouse_off_abd() {
-    if (current_page != 2) {
-        return
+function mouse_off_div(x) {
+    if (x != null && current_page != x) {
+        return;
     }
-
-    document.getElementById("cursor").style.setProperty("scale", "100%");
+    
+    cursor.style.setProperty("scale", "100%");
 }

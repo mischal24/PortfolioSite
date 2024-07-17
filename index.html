@@ -1,126 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
     <head>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
         <title>Nesting Creativity - Mischa Larkins</title>
-        <link rel="icon" type="image/x-icon" href="assets/icons/favicon.svg">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+
         <main>
-            <div id="cursor"></div>
+            <img id="background" src="assets/images/name.svg" />
 
-            <button id="logo" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="location.href=''">
-                <img src="assets/icons/bird.svg" />
-            </button>
+            <a id="logo" href="" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()">
+                <img src="assets/images/logo.svg">
+            </a>
 
-            <nav id="main-nav">
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="set_page(0)"> Home </a>
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="set_page(1)"> Projects </a>
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('assets/resume.pdf');"> Resume </a>
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="set_page(2)"> About </a>
-            </nav>
-
-            <section id="marquee">
-                <div id="track">
-                    <div class="content"> &nbsp;
-                        <span>Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                        <span> Portfolio </span>
-                    </div>
-                </div>
-            </section>
-
-            <img id="background" src="assets/icons/bg.svg" />
-
-            <!-- Projects -->
-
-            <nav id="projects-nav">
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="jump_projects(1)"> Bombat: That’s Gotta Hurt! </a>
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="jump_projects(5)"> NWRESD Trail Template </a>
-                <a class="nav-item" href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="jump_projects(8)"> Orchard Project Tracker </a>
+            <nav>
+                <a href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="select_page(pages.HOME)">Home</a>
+                <a href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="select_page(pages.PROJECTS)">Projects</a>
+                <a href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="select_page(pages.ABOUT)">About</a>
+                <a href="#" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('assets/other/resume.pdf')">Resume</a>
             </nav>
 
             <section id="projects">
-                <span class="project" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://mischal24.itch.io/bombat');">
-                    <img src="assets/projects/bombat.png" />
-                    <img src="assets/ph1.png" />
-                    <img src="assets/ph1.png" />
-                    <img src="assets/ph1.png" />
-                </span>
+                <iframe onmouseenter="cursor.style.setProperty('opacity', '0')" onmouseleave="cursor.style.setProperty('opacity', '1')"
+                src="https://www.youtube.com/embed/VmGX-IVMpo0?si=HhzZtvd3Qk7UGKma" width="800vh" height="500vh" style="border: none;" title="game"></iframe>
+            </section>
 
-                <span class="project" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://www.nwresd.org');">
-                    <img src="assets/projects/nwresdtrail.png" />
-                    <img src="assets/projects/nwresdtrailpcmock.png" />
-                    <img src="assets/projects/nwresdtrailmobilemock.png" />
+            <section id="about">
+                <h1>Mischa Akil Larkins</h1>
+                <h2>Creative Developer</h2>
+                <span id="tokens">
+                    <div class="token" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('I used HTML & CSS to make this webesite!')">HTML/CSS</div>
+                    <div class="token" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('Lua is a bit weird, but I like it!')">Lua</div>
+                    <div class="token" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('I mainly use JS to make applications in NW.')">JS</div>
+                    <div class="token" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('C# was actually the first language I learned!')">C#</div>
+                    <div class="token" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('All of my designs are made in Figma.')">Figma</div>
+                    <div class="token" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('Krita is my art program of choice... because it’s free.')">Krita</div>
                 </span>
+                <p id="about-text">I like to develop many things. Games, Websites, Applications, you name  it!</p>
 
-                <span class="project" onmouseenter="mouse_on_div()" onmouseleave="mouse_off_div()" onclick="window.open('https://mischal24.itch.io/orchard');">
-                    <img src="assets/projects/orchard.png" />
-                    <img src="assets/ph1.png" />
-                    <img src="assets/ph1.png" />
+                <span id="links">
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://mischal24.itch.io')">
+                        <img src="assets/images/itch.svg" />
+                    </a>
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://github.com/mischal24')">
+                        <img src="assets/images/github.svg" />
+                    </a>
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://mischal24.newgrounds.com')">
+                        <img src="assets/images/newgrounds.svg" />
+                    </a>
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://www.youtube.com/@Mischal24')">
+                        <img src="assets/images/youtube.svg" />
+                    </a>
+                    <a href="mailto://mischalarkins06@gmail.com" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)">
+                        <img src="assets/images/email.svg" />
+                    </a>
                 </span>
             </section>
 
-            <!-- Social -->
-
-            <h1 id="about">
-                <span class="about-header"> I'm <a class="me" href="#" onmouseenter="mouse_on_abd()" onmouseleave="mouse_off_abd()">Mischa Akil Larkins</a>, 
-                a game developer & technical artist. </br>
-                <img id="me" class="me" src="assets/me.jpg" /> </span>
-                Not sure what a stack is, but I can use JS, HTML/CSS, Lua, & C#. </br>
-                But I don't just code; I also design and draw too! </br>
-                Although I consider these as hobbies, I use Figma and Krita for them. </br>
-    
-                </br>
-    
-                <span class="about-header"> Talk to me through my... </span> </br>
-                Number: <i>(971) 225-2300</i> </br>
-                Email: <a href="mailto:mischalarkins06@gmail.com" onmouseenter="mouse_on_abd()" onmouseleave="mouse_off_abd()"><i>Mischalarkins06@gmail.com</i></a>
-            </h1>
-
-            <section id="social">
-                <button class="social-item" id="itch" onmouseenter="mouse_on_abd()" onmouseleave="mouse_off_abd()" onclick="window.open('https://mischal24.itch.io');">
-                    <img src="assets/icons/itch.svg" />
-                </button>
-                <button class="social-item" id="github" onmouseenter="mouse_on_abd()" onmouseleave="mouse_off_abd()" onclick="window.open('https://github.com/mischal24')">
-                    <img src="assets/icons/github.svg" />
-                </button>
-                <button class="social-item" id="newgrounds" onmouseenter="mouse_on_abd()" onmouseleave="mouse_off_abd()" onclick="window.open('https://mischal24.newgrounds.com')">
-                    <img src="assets/icons/newgrounds.svg" />
-                </button>
-                <button class="social-item" id="youtube" onmouseenter="mouse_on_abd()" onmouseleave="mouse_off_abd()" onclick="window.open('https://www.youtube.com/@Mischal24')">
-                    <img src="assets/icons/youtube.svg" />
-                </button>
-            </section>
-
-            <!-- Mobile -->
-
-            <section id="mobile">
-                <p>
-                    This looks a lot better on PC.
-                </p>
-            </section>
+            <div id="cursor"></div>
         </main>
 
         <script src="script.js"></script>
+
     </body>
+
 </html>
