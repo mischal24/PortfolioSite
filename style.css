@@ -3,6 +3,16 @@
     src: url(assets/fonts/Outfit-VariableFont_wght.ttf);
 }
 
+::-moz-selection {
+    color: #000000;
+    background: #DEDEDE;
+}
+  
+::selection {
+    color: #000000;
+    background: #DEDEDE;
+}
+
 html, body, main {
     position: relative;
     width: 100%;
