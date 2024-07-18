@@ -117,7 +117,9 @@ function scroll_projects(event) {
         project_scroll = -10;
     }
 
-    if (project_scroll <= (-8.8 * projects.getElementsByClassName("project").length)) {
-        project_scroll = (-8.8 * projects.getElementsByClassName("project").length);
+    let all_projects = projects.getElementsByClassName("project");
+
+    if (project_scroll <= -(all_projects.length * 2.2) * all_projects.length) {
+        project_scroll = -(all_projects.length * 2.2) * all_projects.length;
     }
 }
