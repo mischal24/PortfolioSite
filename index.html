@@ -3,6 +3,8 @@
 
     <head>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta http-equiv="pragma" content="no-cache"/>
         <title>Nesting Creativity - Mischa Larkins</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
         <link rel="stylesheet" href="style.css">
@@ -25,8 +27,26 @@
             </nav>
 
             <section id="projects">
-                <iframe onmouseenter="cursor.style.setProperty('opacity', '0')" onmouseleave="cursor.style.setProperty('opacity', '1')"
-                src="https://www.youtube.com/embed/VmGX-IVMpo0?si=HhzZtvd3Qk7UGKma" width="800vh" height="500vh" style="border: none;" title="game"></iframe>
+                <div class="project" onmouseenter="mouse_on_div(pages.PROJECTS)" onmouseleave="mouse_off_div(pages.PROJECTS)" onclick="window.open('https://www.youtube.com/@mischal24')">
+                    <img src="https://d3bzyjrsc4233l.cloudfront.net/news/Three_Jeff_the_Bearded_Dragon.png" />
+                    <p class="project_name">ProjectName ↗</p>
+                    <p class="project_year">202X</p>
+                </div>
+                <div class="project" onmouseenter="mouse_on_div(pages.PROJECTS)" onmouseleave="mouse_off_div(pages.PROJECTS)">
+                    <img src="https://d3bzyjrsc4233l.cloudfront.net/news/Three_Jeff_the_Bearded_Dragon.png" />
+                    <p class="project_name">ProjectName</p>
+                    <p class="project_year">202X</p>
+                </div>
+                <div class="project" onmouseenter="mouse_on_div(pages.PROJECTS)" onmouseleave="mouse_off_div(pages.PROJECTS)">
+                    <img src="https://d3bzyjrsc4233l.cloudfront.net/news/Three_Jeff_the_Bearded_Dragon.png" />
+                    <p class="project_name">ProjectName</p>
+                    <p class="project_year">202X</p>
+                </div>
+                <div class="project" onmouseenter="mouse_on_div(pages.PROJECTS)" onmouseleave="mouse_off_div(pages.PROJECTS)">
+                    <img src="https://d3bzyjrsc4233l.cloudfront.net/news/Three_Jeff_the_Bearded_Dragon.png" />
+                    <p class="project_name">ProjectName</p>
+                    <p class="project_year">202X</p>
+                </div>
             </section>
 
             <section id="about">
@@ -43,19 +63,19 @@
                 <p id="about-text">I like to develop many things. Games, Websites, Applications, you name  it!</p>
 
                 <span id="links">
-                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://mischal24.itch.io')">
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://mischal24.itch.io')" onmouseover="set_about_text('Try out my games!')">
                         <img src="assets/images/itch.svg" />
                     </a>
-                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://github.com/mischal24')">
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://github.com/mischal24')" onmouseover="set_about_text('My github’s a bit empty.')">
                         <img src="assets/images/github.svg" />
                     </a>
-                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://mischal24.newgrounds.com')">
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://mischal24.newgrounds.com')" onmouseover="set_about_text('I do draw sometimes.')">
                         <img src="assets/images/newgrounds.svg" />
                     </a>
-                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://www.youtube.com/@Mischal24')">
+                    <a href="#" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onclick="window.open('https://www.youtube.com/@Mischal24')" onmouseover="set_about_text('Working on adding content!')">
                         <img src="assets/images/youtube.svg" />
                     </a>
-                    <a href="mailto://mischalarkins06@gmail.com" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)">
+                    <a href="mailto://mischalarkins06@gmail.com" onmouseenter="mouse_on_div(pages.ABOUT)" onmouseleave="mouse_off_div(pages.ABOUT)" onmouseover="set_about_text('Feel free to talk to me.')">
                         <img src="assets/images/email.svg" />
                     </a>
                 </span>

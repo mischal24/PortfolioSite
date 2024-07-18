@@ -12,6 +12,8 @@ let about = document.getElementById("about");
 let about_text = document.getElementById("about-text");
 let cursor = document.getElementById("cursor");
 
+let project_scroll = 0;
+
 function page_loaded() {
     handle_page_change();
 }
@@ -28,7 +30,6 @@ function handle_page_change() {
         background.style.setProperty("transform", "translateX(-60%)");
         logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
         logo.style.setProperty("pointer-events", "all");
-        projects.classList.remove("game-transition");
         projects.style.setProperty("opacity", "0");
         projects.style.setProperty("pointer-events", "none");
         about.style.setProperty("opacity", "0");
@@ -39,7 +40,6 @@ function handle_page_change() {
         background.style.setProperty("transform", "translateX(0%)");
         logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
         logo.style.setProperty("pointer-events", "all");
-        projects.classList.add("game-transition");
         projects.style.setProperty("opacity", "1");
         projects.style.setProperty("pointer-events", "all");
         about.style.setProperty("opacity", "0");
@@ -50,7 +50,6 @@ function handle_page_change() {
         background.style.setProperty("transform", "translateX(-100%)");
         logo.style.setProperty("transform", "scale(500%) translate(11.4vh, 7vh)");
         logo.style.setProperty("pointer-events", "none");
-        projects.classList.remove("game-transition");
         projects.style.setProperty("opacity", "0");
         projects.style.setProperty("pointer-events", "none");
         about.style.setProperty("opacity", "1");
@@ -86,4 +85,31 @@ function mouse_off_div(x) {
     }
     
     cursor.style.setProperty("scale", "100%");
+}
+
+document.body.addEventListener("wheel", scroll_projects);
+
+function scroll_projects(event) {
+    if (current_page != pages.PROJECTS) {
+        return
+    }
+
+    if (event.deltaY < 0)
+    {
+        project_scroll += 10;
+    }
+    else if (event.deltaY > 0)
+    {
+        project_scroll -= 10;
+    }
+
+    projects.style.setProperty("transform", "translateY(" + project_scroll + "vh)");
+
+    if (project_scroll >= -10) {
+        project_scroll = -10;
+    }
+
+    if (project_scroll <= (-8.8 * projects.getElementsByClassName("project").length)) {
+        project_scroll = (-8.8 * projects.getElementsByClassName("project").length);
+    }
 }
