@@ -263,3 +263,84 @@ nav a:hover {
     transition: all 0.5s ease;
     z-index: 4;
 }
+
+#mobile {
+    display: none;
+}
+
+/* Mobile styling */
+@media (max-width: 1400px) {
+    main {
+        background-color: #000;
+        background-image: url(assets/images/pattern_black.png);
+    }
+
+    #mobile {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    #background, #projects, #about, main nav, #cursor {
+        display: none;
+    }
+
+    #mobile nav {
+        transform: translateY(-10vh);
+    }
+
+    #mobile nav a {
+        transition: none;
+    }
+
+    #mobile nav a:hover {
+        transform: none;
+    }
+
+    #mobile #links {
+        left: 0;
+        margin: 3vh;
+    }
+
+    #mobile #links a img {
+        width: 7vh;
+    }
+
+    #logo {
+        bottom: 0;
+    }
+
+    #logo, #logo img {
+        transform: scale(1000%) translate(1vh, -1vh) rotate(-15deg);
+    }
+
+    #mobile h1, #mobile p {
+        position: absolute;
+        right: 3vh;
+        text-align: right;
+        font-weight: bold;
+        color: #DEDEDE;
+    }
+
+    #mobile h1 {
+        width: 50vh;
+        top: 0;
+        font-size: 5vh;
+    }
+
+    #mobile p {
+        width: 50vh;
+        top: 18vh;
+        font-size: 2.3vh;
+    }
+
+    #mobile div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        
+        z-index: 4;
+    }
+}

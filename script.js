@@ -29,7 +29,11 @@ function handle_page_change() {
     if (current_page == pages.HOME) {
         background.style.setProperty("transform", "translateX(-60%)");
         logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
-        logo.style.setProperty("pointer-events", "all");
+        if (window.innerWidth > 1400) {
+            logo.style.setProperty("pointer-events", "all");
+        } else {
+            logo.style.setProperty("pointer-events", "none");
+        }
         projects.style.setProperty("opacity", "0");
         projects.style.setProperty("pointer-events", "none");
         about.style.setProperty("opacity", "0");
@@ -39,7 +43,11 @@ function handle_page_change() {
     if (current_page == pages.PROJECTS) {
         background.style.setProperty("transform", "translateX(0%)");
         logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
-        logo.style.setProperty("pointer-events", "all");
+        if (window.innerWidth > 1400) {
+            logo.style.setProperty("pointer-events", "all");
+        } else {
+            logo.style.setProperty("pointer-events", "none");
+        }
         projects.style.setProperty("opacity", "1");
         projects.style.setProperty("pointer-events", "all");
         about.style.setProperty("opacity", "0");
