@@ -142,7 +142,7 @@ nav a:hover {
 }
 
 .project:hover > img {
-    transform: scale(110%);
+    transform: scale(120%);
 }
 
 .project p {
