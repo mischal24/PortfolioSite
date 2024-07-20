@@ -238,7 +238,7 @@ nav a:hover {
 }
 
 #links a:hover > img {
-    transform: scale(120%) rotate(-2deg);
+    transform: scale(120%) rotate(2deg);
 }
 
 #links a:nth-child(2) {
