@@ -221,7 +221,7 @@ nav a:hover {
     z-index: 1;
 }
 
-#links {
+.links {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -229,26 +229,26 @@ nav a:hover {
     z-index: 1;
 }
 
-#links button {
+.links button {
     background: none;
     border: none;
 }
 
-#links button > img {
+.links button > img {
     width: 9vh;
     height: auto;
     transition: all 0.5s ease;
 }
 
-#links button:hover > img {
+.links button:hover > img {
     transform: scale(120%) rotate(2deg);
 }
 
-#links button:nth-child(2) {
+.links button:nth-child(2) {
     margin-right: 0.7vh;
 }
 
-#links button:nth-child(3) {
+.links button:nth-child(3) {
     margin-right: 1.2vh;
 }
 
@@ -342,13 +342,17 @@ nav a:hover {
         font-size: 2.3vh;
     }
 
-    #links button {
+    .links {
+        left: -1px;
+    }
+
+    .links button {
         padding: 0;
         width: 8vh;
         height: auto;
     }
 
-    #links button img {
+    .links button img {
         transform: scale(80%);
     }
 }
