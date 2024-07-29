@@ -4,7 +4,7 @@ const pages = {
     ABOUT: 2
 };
 
-let current_page = pages.PROJECTS;
+let current_page = pages.HOME;
 let background = document.getElementById("background");
 let logo = document.getElementById("logo");
 let projects = document.getElementById("projects");
