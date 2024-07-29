@@ -4,7 +4,7 @@ const pages = {
     ABOUT: 2
 };
 
-let current_page = pages.HOME;
+let current_page = pages.PROJECTS;
 let background = document.getElementById("background");
 let logo = document.getElementById("logo");
 let projects = document.getElementById("projects");
@@ -27,28 +27,28 @@ function select_page(x) {
 
 function handle_page_change() {
     if (current_page == pages.HOME) {
-        background.style.setProperty("transform", "translateX(-60%)");
+        background.style.setProperty("transform", "translateX(-30%)");
         logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
         if (window.innerWidth > 1400) {
             logo.style.setProperty("pointer-events", "all");
         } else {
             logo.style.setProperty("pointer-events", "none");
         }
-        projects.style.setProperty("opacity", "0");
+        projects.style.setProperty("right", "-110vh");
         projects.style.setProperty("pointer-events", "none");
         about.style.setProperty("opacity", "0");
         about.style.setProperty("pointer-events", "none");
     }
 
     if (current_page == pages.PROJECTS) {
-        background.style.setProperty("transform", "translateX(0%)");
+        background.style.setProperty("transform", "translateX(-70%)");
         logo.style.setProperty("transform", "scale(100%) translate(0, 0)");
         if (window.innerWidth > 1400) {
             logo.style.setProperty("pointer-events", "all");
         } else {
             logo.style.setProperty("pointer-events", "none");
         }
-        projects.style.setProperty("opacity", "1");
+        projects.style.setProperty("right", "10vh");
         projects.style.setProperty("pointer-events", "all");
         about.style.setProperty("opacity", "0");
         about.style.setProperty("pointer-events", "none");
@@ -58,7 +58,7 @@ function handle_page_change() {
         background.style.setProperty("transform", "translateX(-100%)");
         logo.style.setProperty("transform", "scale(500%) translate(11.4vh, 7vh)");
         logo.style.setProperty("pointer-events", "none");
-        projects.style.setProperty("opacity", "0");
+        projects.style.setProperty("right", "-110vh");
         projects.style.setProperty("pointer-events", "none");
         about.style.setProperty("opacity", "1");
         about.style.setProperty("pointer-events", "all");

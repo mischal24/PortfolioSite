@@ -111,8 +111,6 @@ nav a:hover {
 
 #projects {
     position: absolute;
-    left: 50vh;
-    opacity: 0;
     display: flex;
     flex-direction: column;
     transition: all 0.5s ease;
@@ -120,17 +118,17 @@ nav a:hover {
 }
 
 .project {
-    width: 140.093vh;
-    height: 30.093vh;
+    width: 100vh;
+    height: 30vh;
     margin: 3vh;
-    opacity: 0.2;
+    filter: brightness(50%);
     overflow:hidden;
     border-radius: 6vh;
     transition: all 0.5s ease;
 }
 
 .project:hover {
-    opacity: 1;
+    filter: none;
     transform: scale(110%) rotate(1.5deg);
 }
 
@@ -160,7 +158,7 @@ nav a:hover {
 
 .project .project_year {
     text-align: right;
-    transform: translate(125vh, -10vh);
+    transform: translate(85vh, -10vh);
 }
 
 #about {
