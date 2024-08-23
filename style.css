@@ -1,29 +1,19 @@
 @font-face {
-    font-family: outfit;
-    src: url(assets/fonts/Outfit-VariableFont_wght.ttf);
+    font-family: Outfit;
+    src: url(assets/font/Outfit-VariableFont_wght.ttf);
 }
 
-::-moz-selection {
-    color: #000000;
-    background: #DEDEDE;
-}
-  
-::selection {
-    color: #000000;
-    background: #DEDEDE;
+html {
+    overflow: hidden;
 }
 
 html, body, main {
-    position: relative;
+    margin: 0;
     width: 100%;
     height: 100%;
-    margin: 0;
-    overflow: hidden;
+    font-family: Outfit;
+    position: relative;
     z-index: 0;
-}
-
-body {
-    font-family: outfit;
 }
 
 main {
@@ -37,68 +27,66 @@ main {
         background-position: 0px 0px;
     }
     100% {
-        background-position: -125px 125px;
+        background-position: -139px 139px;
     }
-}
-
-#background {
-    position: absolute;
-    width: auto;
-    height: 100%;
-    pointer-events: none;
-    transform: translateX(-30%);
-    transition: all 0.5s ease;
-    z-index: 1;
 }
 
 #logo {
-    position: absolute;
+    top: 0.8cm;
+    left: 0.8cm;
+    width: 2cm;
+    height: 2cm;
+    border: none;
+    background: none;
     mix-blend-mode: difference;
     transition: all 0.4s ease;
+    position: absolute;
     z-index: 2;
 }
 
-#logo img {
-    width: 8vh;
-    height: 8vh;
-    margin: 4vh;
-    pointer-events: none;
-}
-
 #logo:hover {
-    animation: logo-jingle 1s both;
+    animation: logo-wiggle 1s linear;
 }
 
-@keyframes logo-jingle {
+@keyframes logo-wiggle {
     0% {
-        transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
     }
+  
     10%, 20% {
-        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
     }
+  
     30%, 50%, 70%, 90% {
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
     }
+  
     40%, 60%, 80% {
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
     }
+  
     100% {
-        transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
     }
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
 }
 
 nav {
-    position: absolute;
+    bottom: 1cm;
+    left: 1cm;
     display: flex;
     flex-direction: column;
-    margin: 4vh;
-    bottom: 0vh;
     mix-blend-mode: difference;
+    position: absolute;
     z-index: 2;
 }
 
 nav a {
-    font-size: 5vh;
+    font-size: 48px;
     font-weight: bold;
     text-decoration: none;
     color: #DEDEDE;
@@ -106,253 +94,143 @@ nav a {
 }
 
 nav a:hover {
-    transform: translateX(5vh);
+    transform: translateX(1cm);
+}
+
+#name-card {
+    top: 0;
+    height: 100%;
+    transform: translateX(-5vw);
+    transition: all 0.5s ease;
+    position: absolute;
+    z-index: 1;
 }
 
 #projects {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#project-reel {
     position: absolute;
-    display: flex;
-    flex-direction: column;
+    right: -25cm;
+    height: fit-content;
     transition: all 0.5s ease;
-    z-index: 3;
 }
 
 .project {
-    width: 100vh;
-    height: 30vh;
-    margin: 3vh;
-    filter: brightness(50%);
-    overflow:hidden;
-    border-radius: 6vh;
+    background-color: #000;
+    margin-top: 1cm;
+    margin-bottom: 2cm;
+    width: 20cm;
+    height: 8cm;
+    border-radius: 50px;
+    overflow: hidden;
     transition: all 0.5s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .project:hover {
-    filter: none;
     transform: scale(110%) rotate(1.5deg);
 }
 
 .project img {
+    background-color: #000;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 50%;
     transition: all 0.5s ease;
+    position: absolute;
+    z-index: 2;
 }
 
 .project:hover > img {
     transform: scale(120%);
+    opacity: 100%;
+}
+
+.project a, .project p {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000000A4;
+    transition: all 0.5s ease;
+    position: absolute;
+    z-index: 3;
+}
+
+.project a {
+    display: block;
+    font-size: 33px;
+    transform: translate(1cm, 5.5cm);
+}
+
+.project a::after {
+    content: " ↗";
 }
 
 .project p {
-    position: absolute;
-    color: #DEDEDE;
-    text-shadow: 1px 1px 2px black;
-    font-size: 2.5vh;
-    font-weight: bold;
-}
-
-.project .project_name {
-    text-align: left;
-    transform: translate(7vh, -10vh);
-}
-
-.project .project_year {
-    text-align: right;
-    transform: translate(85vh, -10vh);
+    transform: translate(1cm, 6cm);
+    font-size: 22px;
 }
 
 #about {
+    width: 50cm;
+    height: 100%;
+    top: 5cm;
+    left: 13cm;
     opacity: 0;
-    transition: all 0.4s ease;
-}
-
-#about h1, h2 {
+    transition: all 0.5s;
+    pointer-events: none;
     position: absolute;
-    left: 65vh;
     z-index: 1;
 }
 
 #about h1 {
-    top: 24vh;
-    font-size: 9vh;
+    display: block;
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
 }
 
 #about h2 {
-    top: 35vh;
-    font-size: 5.5vh;
+    display: block;
+    transform: translateY(3cm);
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
 }
 
-#tokens {
-    position: absolute;
-    left: 90vh;
-    top: 50vh;
+#skills {
+    width: 15cm;
+    height: 3.5cm;
     display: grid;
+    transform: translate(6cm, 6cm);
     grid-template-columns: auto auto auto;
-    z-index: 1;
+    position: absolute;
 }
 
-.token {
-    width: 15vh;
-    height: 3vh;
+.skill {
     background-color: #000;
-    color: #DEDEDE;
-    padding: 1vh;
-    margin: 1vh;
-    margin-right: 5vh;
-    font-size: 2vh;
-    border-radius: 50px;
+    color: #FFF;
+    margin: 5px;
+    padding-top: 15px;
+    width: 4cm;
+    height: 1cm;
+    font-weight: bold;
+    border-radius: 40px;
     text-align: center;
     transition: all 0.5s ease;
-    font-weight: bold;
 }
 
-.token:hover {
-    transform: scale(120%) rotate(2deg);
+.skill:hover {
+    transform: scale(110%) rotate(1.5deg);
 }
 
-#about p {
+#social {
+    
     position: absolute;
-    width: 75vh;
-    left: 65vh;
-    top: 70vh;
-    font-size: 3vh;
-    font-weight: bold;
-    text-align: center;
-    z-index: 1;
-}
-
-.links {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 2vh;
-    z-index: 1;
-}
-
-.links button {
-    background: none;
-    border: none;
-}
-
-.links button > img {
-    width: 9vh;
-    height: auto;
-    transition: all 0.5s ease;
-}
-
-.links button:hover > img {
-    transform: scale(120%) rotate(2deg);
-}
-
-.links button:nth-child(2) {
-    margin-right: 0.7vh;
-}
-
-.links button:nth-child(3) {
-    margin-right: 1.2vh;
-}
-
-#cursor {
-    width: 3vw;
-    height: 3vw;
-    position: absolute;
-    border-radius: 50%;
-    background-color: #DEDEDE;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    z-index: 4;
-}
-
-#mobile {
-    display: none;
-}
-
-/* Mobile styling */
-@media (max-width: 1400px) {
-    main {
-        background-color: #000;
-        background-image: url(assets/images/pattern_black.png);
-    }
-
-    #mobile {
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    #background, #projects, #about, main nav, #cursor {
-        display: none;
-    }
-
-    #mobile nav {
-        position: absolute;
-        transform: translateY(-10vh);
-        z-index: 4;
-    }
-
-    #mobile nav a {
-        transition: none;
-    }
-
-    #mobile nav a:hover {
-        transform: none;
-    }
-
-    #mobile #links {
-        position: absolute;
-        left: 0;
-        margin: 3vh;
-        z-index: 4;
-    }
-
-    #mobile #links a img {
-        width: 7vh;
-    }
-
-    #logo {
-        bottom: 0;
-    }
-
-    #logo, #logo img {
-        transform: scale(1000%) translate(1vh, -1vh) rotate(-15deg);
-        transition: none;
-    }
-
-    #mobile h1, #mobile p {
-        position: absolute;
-        right: 3vh;
-        text-align: right;
-        font-weight: bold;
-        color: #DEDEDE;
-    }
-
-    #mobile h1 {
-        width: 50vh;
-        top: 0;
-        font-size: 5vh;
-    }
-
-    #mobile p {
-        width: 40vh;
-        top: 18vh;
-        font-size: 2.3vh;
-    }
-
-    .links {
-        left: -1px;
-    }
-
-    .links button {
-        padding: 0;
-        width: 8vh;
-        height: auto;
-    }
-
-    .links button img {
-        transform: scale(80%);
-    }
 }
