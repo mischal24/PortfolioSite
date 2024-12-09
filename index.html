@@ -1,80 +1,64 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
         <meta http-equiv="pragma" content="no-cache"/>
         <title>Nesting Creativity - Mischa Larkins</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="general.css">
     </head>
 
     <body>
-        <main>
-            <article id="global">
-                <button id="logo" onclick="location.reload()">
-                    <img src="assets/images/logo.svg" />
-                </button>
+        <new-logo id="logo" image="assets/images/placeholder.svg"></new-logo>
 
-                <nav>
-                    <a href="#" onclick="set_current_page(Pages.HOME)">Home</a>
-                    <a href="#" onclick="set_current_page(Pages.PROJECTS)">Projects</a>
-                    <a href="#" onclick="set_current_page(Pages.ABOUT)">About</a>
-                    <a href="#" onclick="window.open('#')">Resume</a>
-                </nav>
+        <img id="name-card" src="assets/images/name.svg" />
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">About</a>
+            <a href="#" onclick="window.open('https://mischal24.github.io')">Resume</a>
+        </nav>
+
+        <section id="projects">
+            <div id="project-list">
+                <new-project title="Test" image="assets/images/pattern.png" year="2024" data-href="https://mischal24.github.io"></new-project>
+                <new-project title="Huh" image="assets/images/pattern.png" year="2023"></new-project>
+                <new-project title="Test" image="assets/images/pattern.png" year="2024" data-href="https://mischal24.github.io"></new-project>
+                <new-project title="Huh" image="assets/images/pattern.png" year="2023"></new-project>
+            </div>
+        </section>
         
-                <img id="name-card" src="assets/images/name-card.svg" />
-            </article>
+        <section id="about">
+            <div class="center">
+                <h1 id="name-text">Mischa Akil Larkins</h1>
+                <h2 id="job-title">Creative Developer</h2>
 
-            <!--Add projects here by copying a div and changing the content to match the new project-->
-            <article id="projects">
-                <section id="project-reel">
-                    <div class="project">
-                        <img src="assets/images/placeholder_jeff.png" />
-                        <a href="#">Name</a>
-                        <p>Year Finished</p>
-                    </div>
-                    <div class="project">
-                        <img src="assets/images/placeholder_jeff.png" />
-                        <a href="#">Name</a>
-                        <p>Year Finished</p>
-                    </div>
-                    <div class="project">
-                        <img src="assets/images/placeholder_jeff.png" />
-                        <a href="#">Name</a>
-                        <p>Year Finished</p>
-                    </div>
-                    <div class="project">
-                        <img src="assets/images/placeholder_jeff.png" />
-                        <a href="#">Name</a>
-                        <p>Year Finished</p>
-                    </div>
-                </section>
-            </article>
+                <div id="skill-list">
+                    <new-skill-card skill="C" text="Test 1"></new-skill-card>
+                    <new-skill-card skill="JS" text="Test 2"></new-skill-card>
+                    <new-skill-card skill="CSS" text="Test 3"></new-skill-card>
+                    <new-skill-card skill="Lua" text="Test 4"></new-skill-card>
+                    <new-skill-card skill="Krita" text="Test 5"></new-skill-card>
+                    <new-skill-card skill="Figma" text="Test 6"></new-skill-card>
+                </div>
 
-            <article id="about">
-                <h1>Mischa Akil Larkins</h1>
-                <h2>Creative Developer</h2>
+                <h3 id="skill-description">
+                    I like to develop many things. Games, applications, websites,<br>you name it!
+                </h3>
+            </div>
 
-                <section id="skills">
-                    <div class="skill">HTML/CSS</div>
-                    <div class="skill">JS</div>
-                    <div class="skill">Lua</div>
-                    <div class="skill">C#</div>
-                    <div class="skill">Krita</div>
-                    <div class="skill">Figma</div>
-                </section>
+            <div id="social-list">
+                <new-social image="assets/images/placeholder.svg" data-href="https://mischal24.github.io"></new-social>
+                <new-social image="assets/images/placeholder.svg" data-href="https://mischal24.github.io"></new-social>
+                <new-social image="assets/images/placeholder.svg" data-href="https://mischal24.github.io"></new-social>
+                <new-social image="assets/images/placeholder.svg" data-href="https://mischal24.github.io"></new-social>
+                <new-social image="assets/images/placeholder.svg" data-href="https://mischal24.github.io"></new-social>
+            </div>
+        </section>
 
-                <p>Replace Text Here</p>
-
-                <section id="socials">
-                    <button class="social"></button>
-                    <button class="social"></button>
-                    <button class="social"></button>
-                    <button class="social"></button>
-                    <button class="social"></button>
-                </section>
-            </article>
-        </main>
-
-        <script src="script.js"></script>
+        <script src="script.js" type="module"></script>
     </body>
+
+    
 </html>

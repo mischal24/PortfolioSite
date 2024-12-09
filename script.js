@@ -1,74 +1,92 @@
-// Page Changes
+import Logo from "./components/logo.js";
+import Project from "./components/project.js";
+import SkillCard from "./components/skill-card.js";
+import Social from "./components/social.js";
+
+window.customElements.define('new-logo', Logo);
+window.customElements.define('new-project', Project);
+window.customElements.define('new-skill-card', SkillCard);
+window.customElements.define('new-social', Social);
+
 const Pages = {
     HOME:0,
     PROJECTS:1,
     ABOUT:2
 };
 
-let current_page = Pages.ABOUT;
+let current_page = Pages.HOME;
 
-let nc = document.getElementById("name-card");
-let pr = document.getElementById("project-reel");
-let ab = document.getElementById("about");
-let lo = document.getElementById("logo");
-
-function set_current_page(new_page) {
+window.set_current_page = function(new_page) {
     current_page = new_page;
+    console.log('Current page is:', current_page);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('[href="#"]').addEventListener('click', () => set_current_page(Pages.HOME));
+    document.querySelectorAll('[href="#"]')[1].addEventListener('click', () => set_current_page(Pages.PROJECTS));
+    document.querySelectorAll('[href="#"]')[2].addEventListener('click', () => set_current_page(Pages.ABOUT));
+});
+
+const logo = document.getElementById("logo");
+const name_card = document.getElementById("name-card");
+const project_elements = document.getElementById("projects");
+const about_elements = document.getElementById("about");
 
 function update_page() {
     switch(current_page) {
         case Pages.HOME:
-            nc.style.setProperty("transform", "translateX(-5vw)");
-            pr.style.setProperty("right", "-25cm");
-            ab.style.setProperty("opacity", "0");
-            ab.style.setProperty("pointer-events", "none");
-            lo.style.setProperty("transform", "translate(0, 0) scale(100%)");
-            lo.style.setProperty("pointer-events", "all");
+            logo.grow(false);
+            name_card.style.transform = 'translateX(0vw)';
+            project_elements.style.transform = 'translateX(50vw)';
+            project_elements.style.opacity = 0;
+            project_elements.style.pointerEvents = 'none';
+            about_elements.style.opacity = 0;
+            about_elements.style.pointerEvents = 'none';
             break;
         case Pages.PROJECTS:
-            nc.style.setProperty("transform", "translateX(-46vw)");
-            pr.style.setProperty("right", "3cm");
-            ab.style.setProperty("opacity", "0");
-            ab.style.setProperty("pointer-events", "none");
-            lo.style.setProperty("transform", "translate(0, 0) scale(100%)");
-            lo.style.setProperty("pointer-events", "all");
+            logo.grow(false);
+            name_card.style.transform = 'translateX(-35vw)';
+            project_elements.style.transform = 'translateX(0vw)';
+            project_elements.style.opacity = '100%';
+            project_elements.style.pointerEvents = 'all';
+            about_elements.style.opacity = 0;
+            about_elements.style.pointerEvents = 'none';
             break;
         case Pages.ABOUT:
-            nc.style.setProperty("transform", "translateX(-95vw)");
-            pr.style.setProperty("right", "-25cm");
-            ab.style.setProperty("opacity", "100%");
-            ab.style.setProperty("pointer-events", "all");
-            lo.style.setProperty("transform", "translate(11cm, 8cm) scale(600%)");
-            lo.style.setProperty("pointer-events", "none");
+            logo.grow(true);
+            name_card.style.transform = 'translateX(-100vw)';
+            project_elements.style.transform = 'translateX(50vw)';
+            project_elements.style.opacity = 0;
+            project_elements.style.pointerEvents = 'none';
+            about_elements.style.opacity = '100%';
+            about_elements.style.pointerEvents = 'all';
+            break;
     }
 }
 
-/* debug */ document.onload = update_page();
+document.onload = update_page();
 document.addEventListener("click", update_page);
 
-//Project Scrolling
 let current_scroll = 0;
 
-function scroll_project_reel(event) {
-    if(event.deltaY > 0) {
-        current_scroll += 1;
-    }
+const project_list = document.getElementById("project-list");
 
-    if(event.deltaY < 0) {
-        current_scroll -= 1;
-    }
+function scroll_project_list(event) {
+    const childHeight = project_list.firstElementChild.offsetHeight + 37.8;
+    const totalChildren = project_list.childElementCount;
+    const maxScroll = -childHeight * (totalChildren - 1);
+    const dynamicOffset = 37.8 - (totalChildren * 0.12);
 
-    if(current_scroll > 0) {
-        current_scroll = 0;
+    if (totalChildren > 2) {
+        if (event.deltaY > 0) {
+            current_scroll -= 200;
+        } else if (event.deltaY < 0) {
+            current_scroll += 200;
+        }
+    
+        current_scroll = Math.max(maxScroll + dynamicOffset, Math.min(37.8, current_scroll));
+        project_list.style.transform = `translateY(${current_scroll}px)`;
     }
-
-    if(current_scroll < -((pr.childElementCount-2) * 10)) {
-        current_scroll = -((pr.childElementCount-2) * 10);
-    }
-
-    pr.style.setProperty("transform", "translateY(" + current_scroll + "cm)");
-    pr.getElementsByClassName("project").style.setProperty("margin-bottom", "" + (pr.childElementCount-1) + "cm");
 }
 
-document.body.addEventListener("wheel", scroll_project_reel);
+document.addEventListener("wheel", scroll_project_list);
