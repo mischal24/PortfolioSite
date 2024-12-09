@@ -59,7 +59,8 @@ nav a:hover {
     transform: translateX(1cm);
 }
 
-#projects {
+#projects, #about {
+    opacity: 0;
     transition: all 0.5s ease;
 }
 
@@ -75,10 +76,6 @@ nav a:hover {
 #project-list > * {
     display: block;
     margin-bottom: 1cm;
-}
-
-#about {
-    transition: all 0.5s ease;
 }
 
 .center {
