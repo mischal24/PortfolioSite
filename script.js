@@ -1,8 +1,10 @@
+import Cursor from "./components/cursor.js";
 import Logo from "./components/logo.js";
 import Project from "./components/project.js";
 import SkillCard from "./components/skill-card.js";
 import Social from "./components/social.js";
 
+window.customElements.define('new-cursor', Cursor);
 window.customElements.define('new-logo', Logo);
 window.customElements.define('new-project', Project);
 window.customElements.define('new-skill-card', SkillCard);
