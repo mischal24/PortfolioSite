@@ -90,16 +90,16 @@ nav a:hover {
 
 #name-text {
     position: absolute;
-    font-size: 4vw;
-    top: 20vh;
-    transform: translateX(6vw);
+    font-size: 5vw;
+    top: 18vh;
+    transform: translateX(6.5vw);
 }
 
 #job-title {
     position: absolute;
     font-size: 3vw;
-    top: 32vh;
-    transform: translateX(2vw);
+    top: 31vh;
+    transform: translateX(-2vw);
 }
 
 #skill-list {
@@ -109,7 +109,7 @@ nav a:hover {
     grid-auto-rows: 3.3vw;
     gap: 10px;
     position: absolute;
-    transform: translateX(2.5vw);
+    transform: translateX(4vw);
     top: 46vh;
 }
 

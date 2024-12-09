@@ -8,7 +8,7 @@ template.innerHTML = `
             background: none;
             mix-blend-mode: difference;
             margin-top: 20px;
-            margin-left: 10px;
+            margin-left: 20px;
             position: absolute;
             transition: all 0.4s ease;
             z-index: 2;
@@ -68,7 +68,7 @@ class Logo extends HTMLElement {
 
     grow(onAbout) {
         if (onAbout) {
-            this.shadowRoot.querySelector("button").style.transform = 'translate(33vw, 18vw) scale(700%)';
+            this.shadowRoot.querySelector("button").style.transform = 'translate(30vw, 17vw) scale(690%)';
             this.shadowRoot.querySelector("button").style.pointerEvents = 'none';
         } else {
             this.shadowRoot.querySelector("button").style.transform = 'translate(0vw, 0vw) scale(100%)';

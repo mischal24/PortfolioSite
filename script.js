@@ -77,7 +77,7 @@ function scroll_project_list(event) {
     const maxScroll = -childHeight * (totalChildren - 1);
     const dynamicOffset = 37.8 - (totalChildren * 0.12);
 
-    if (totalChildren > 2) {
+    if (totalChildren > 2 && current_page == Pages.PROJECTS) {
         if (event.deltaY > 0) {
             current_scroll -= 200;
         } else if (event.deltaY < 0) {
