@@ -5,7 +5,7 @@ template.innerHTML = `
         .skill-card {
             display: flex;
             background-color: #000;
-            color: #FFF;
+            color: #DEDEDE;
             margin: 10px;
             width: 8vw;
             height: 3vw;

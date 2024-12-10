@@ -125,3 +125,9 @@ nav a:hover {
     right: 1vw;
     bottom: 1vw;
 }
+
+@media (hover: none) and (orientation: portrait) {
+    #pc {
+        display: none;
+    }
+}

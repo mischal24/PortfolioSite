@@ -47,7 +47,7 @@ function update_page() {
             break;
         case Pages.PROJECTS:
             logo.grow(false);
-            name_card.style.transform = 'translateX(-35vw)';
+            name_card.style.transform = 'translateX(-50%)';
             project_elements.style.transform = 'translateX(0vw)';
             project_elements.style.opacity = '100%';
             project_elements.style.pointerEvents = 'all';
@@ -56,7 +56,7 @@ function update_page() {
             break;
         case Pages.ABOUT:
             logo.grow(true);
-            name_card.style.transform = 'translateX(-100vw)';
+            name_card.style.transform = 'translateX(-100%)';
             project_elements.style.transform = 'translateX(50vw)';
             project_elements.style.opacity = 0;
             project_elements.style.pointerEvents = 'none';

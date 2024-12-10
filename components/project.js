@@ -35,7 +35,7 @@ template.innerHTML = `
         }
 
         .project a, .project p {
-            color: #FFF;
+            color: #DEDEDE;
             font-weight: bold;
             text-decoration: none;
             text-shadow: 2px 2px 2px #000000A4;
