@@ -159,21 +159,22 @@ nav a:hover {
         width: 100vw;
         color: #DEDEDE;
         position: absolute;
+        mix-blend-mode: difference;
         text-align: right;
     }
 
     #mobile-name h1 {
         width: 100vw;
-        right: 35px;
+        right: 45px;
         top: -4vh;
-        font-size: 10vw;
+        font-size: 7vh;
     }
     
     #mobile-name h2 {
-        width: 50vw;
+        width: 60vw;
         right: 10px;
-        top: 16vh;
-        font-size: 4vw;
+        top: 30vh;
+        font-size: 3vh;
     }
 
     nav {
