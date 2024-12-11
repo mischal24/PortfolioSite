@@ -7,8 +7,8 @@ template.innerHTML = `
             border: none;
             background: none;
             mix-blend-mode: difference;
-            margin-top: 20px;
-            margin-left: 20px;
+            margin-top: 30px;
+            margin-left: 30px;
             position: absolute;
             transition: all 0.4s ease;
             z-index: 2;

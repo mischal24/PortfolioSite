@@ -160,20 +160,23 @@ nav a:hover {
         color: #DEDEDE;
         position: absolute;
         mix-blend-mode: difference;
+        right: 0;
         text-align: right;
     }
 
     #mobile-name h1 {
+        position: relative;
         width: 100vw;
-        right: 45px;
+        right: 14vw;
         top: -4vh;
         font-size: 7vh;
     }
     
     #mobile-name h2 {
+        position: relative;
         width: 60vw;
-        right: 10px;
-        top: 30vh;
+        right: -35vw;
+        top: -10vh;
         font-size: 3vh;
     }
 
@@ -195,5 +198,5 @@ nav a:hover {
         position: absolute;
         left: 15px;
         bottom: 0;
-    }    
+    }
 }
