@@ -88,7 +88,7 @@ nav a:hover {
 #name-text {
     position: absolute;
     font-size: 5vw;
-    top: 18vh;
+    top: 16vh;
     transform: translateX(6.5vw);
 }
 
