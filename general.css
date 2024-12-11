@@ -147,9 +147,10 @@ nav a:hover {
 
     #mobile img {
         position: absolute;
-        bottom: -5px;
-        left: 0;
-        transform: scale(200%) rotate(-35deg);
+        bottom: -40vw;
+        left: -40vw;
+        width: 165vw;
+        transform: rotate(-35deg);
         filter: invert(97%) sepia(0%) saturate(1546%) hue-rotate(192deg) brightness(114%) contrast(74%);
         mix-blend-mode: difference;
         pointer-events: none;
