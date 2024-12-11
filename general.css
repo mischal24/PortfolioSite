@@ -126,8 +126,73 @@ nav a:hover {
     bottom: 1vw;
 }
 
-@media (hover: none) and (orientation: portrait) {
+#mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: black;
+        background-image: url(assets/images/patternb.png);
+    }
+
     #pc {
         display: none;
     }
+
+    #mobile {
+        width: 100%;
+        display: block;
+    }
+
+    #mobile img {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        transform: scale(200%) rotate(-35deg);
+        filter: invert(97%) sepia(0%) saturate(1546%) hue-rotate(192deg) brightness(114%) contrast(74%);
+        mix-blend-mode: difference;
+        pointer-events: none;
+    }
+
+    #mobile-name {
+        width: 100vw;
+        color: #DEDEDE;
+        position: absolute;
+        text-align: right;
+    }
+
+    #mobile-name h1 {
+        width: 100vw;
+        right: 35px;
+        top: -4vh;
+        font-size: 10vw;
+    }
+    
+    #mobile-name h2 {
+        width: 50vw;
+        right: 10px;
+        top: 16vh;
+        font-size: 4vw;
+    }
+
+    nav {
+        transform: translate(-15px, -6vw);
+    }
+
+    nav a {
+        font-size: 15vw;
+    }
+
+    nav a:hover {
+        transform: none;
+    }
+
+    #social-list {
+        transform: scale(70%);
+        transform-origin: left center;
+        position: absolute;
+        left: 15px;
+        bottom: 0;
+    }    
 }
