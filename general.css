@@ -68,7 +68,7 @@ nav a:hover {
     width: min-content; 
     height: min-content;
     position: absolute;
-    right: 10vw;
+    right: 12.5vh;
     transform: translateY(1cm);
     transition: all 0.5s ease;
 }
